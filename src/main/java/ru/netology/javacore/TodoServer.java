@@ -33,13 +33,16 @@ public class TodoServer {
                         case "ADD":
                             todos.addTask(task.getTask());
                             System.out.println(todos.getAllTasks());
+                            writer.println(todos.getAllTasks());
                             continue;
                         case "REMOVE":
                             todos.removeTask(task.getTask());
                             System.out.println(todos.getAllTasks());
+                            writer.println(todos.getAllTasks());
                             continue;
                         default:
                             System.out.println("Неверно указан атрибут Type!");
+                            writer.println("Неверно указан атрибут Type!");
                     }
 
 

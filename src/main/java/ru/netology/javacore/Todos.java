@@ -3,12 +3,13 @@ package ru.netology.javacore;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class Todos {
-    private final int MAXTASK = 7;
-    private List<String> taskList = new ArrayList<>();
+    private final int MAX_TASK = 7;
+    private TreeSet<String> taskList = new TreeSet<>();
 
     public void addTask(String task) {
-        if (taskList.size() < MAXTASK) {
+        if (taskList.size() < MAX_TASK) {
             taskList.add(task);
         }
     }
@@ -18,15 +19,16 @@ public class Todos {
     }
 
     public String getAllTasks() {
-        if (taskList.size() > 0) {
-            String sorttask="";
-            Collections.sort(taskList);
+        if (taskList.isEmpty()) {
+            return "Список задач пуст!";
+        } else {
+            StringBuilder sorttask = new StringBuilder();
             for (String task : taskList) {
-                sorttask += task + " ";
+                sorttask.append(task);
+                sorttask.append(" ");
             }
-            return sorttask;
+            return sorttask.toString();
         }
-        return "Список задач пуст!";
     }
 
 }

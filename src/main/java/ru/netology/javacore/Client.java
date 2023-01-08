@@ -17,8 +17,8 @@ public class Client {
              PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
             JSONObject jsonTask = new JSONObject();
-            jsonTask.put("task", "Игра в компьютер");
-            jsonTask.put("type", "REM121OVE");
+            jsonTask.put("task", "Ястреб");
+            jsonTask.put("type", "ADD");
             System.out.println(jsonTask);
             out.println(jsonTask);
         } catch (IOException e) {
